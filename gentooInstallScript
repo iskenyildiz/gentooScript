@@ -74,6 +74,7 @@ sleep 3s
 echo '###Emerging new world...'
 emerge --verbose --update --deep --newuse @world
 sleep 3s
+echo "Europe/Istanbul" > /etc/timezone
 echo '###Updating environment...'
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 sleep 3s
