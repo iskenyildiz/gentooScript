@@ -40,7 +40,7 @@ tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 sleep 5s
 cd /mnt/gentoo
 sleep 2s
-echo MAKEOPTS='"-j4"' >> etc/portage/make.conf 
+echo MAKEOPTS='"-j4"' >> etc/portage/make.conf #change the '4' depending on how many processors you are using.
 sleep 2s
 
 cp --dereference /etc/resolv.conf /mnt/gentoo/etc/
@@ -75,7 +75,7 @@ echo '###Emerging new world...'
 emerge --verbose --update --deep --newuse @world
 sleep 3s
 echo "###Setting timezone..."
-echo "Europe/Istanbul" > /etc/timezone
+echo "Europe/Istanbul" > /etc/timezone #change this depending on your time zone
 emerge --config sys-libs/timezone-data
 echo '###Updating environment...'
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
@@ -102,10 +102,10 @@ sleep 1s
 genkernel all
 
 echo '### Setting hostname...'
-echo hostname="isken" > /etc/conf.d/hostname
+echo hostname="isken" > /etc/conf.d/hostname #your own hostname
 sed 's/127.0.0.1/127.0.0.1       isken isken/' /etc/hosts
 sed -i 's/\\O//g' /etc/issue
-echo "root:asdfg123" | chpasswd
+echo "root:asdfg123" | chpasswd #your own password
 
 echo '###Emerging system logger...'
 emerge app-admin/sysklogd
