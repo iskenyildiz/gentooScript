@@ -103,7 +103,7 @@ genkernel all
 
 echo '### Setting hostname...'
 echo hostname="isken" > /etc/conf.d/hostname #your own hostname
-sed 's/127.0.0.1/127.0.0.1       isken isken/' /etc/hosts
+sed 's/127.0.0.1/127.0.0.1       isken isken/' /etc/hosts  # this adds your hostname for the loopback IP.
 sed -i 's/\\O//g' /etc/issue
 echo "root:asdfg123" | chpasswd #your own password
 
