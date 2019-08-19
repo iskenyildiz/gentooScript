@@ -102,14 +102,17 @@ sleep 1s
 genkernel all
 
 echo '### Setting hostname...'
-
 echo hostname="my_hostname" > /etc/conf.d/hostname
+sed -i 's/\\O//g' /etc/issue
 echo "root:asdfg123" | chpasswd
+
 echo '###Emerging system logger...'
 emerge app-admin/sysklogd
 rc-update add sysklogd default
+
 echo '###emerging DHCP...'
 emerge  net-misc/dhcpcd
+
 echo '###Installing GRUB2...'
 emerge --verbose sys-boot/grub:2
 grub-install /dev/sda
@@ -117,6 +120,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 exit
 END
 cd
+
 echo '###Unmounting root FS...'
 umount -l /mnt/gentoo/dev{/shm,/pts,}
 umount -R /mnt/gentoo
