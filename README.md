@@ -13,4 +13,4 @@ This is a Gentoo configuration script for building Gentoo. The script follows wh
  2) In your VM, without the commas, type wget 'yourrawaddress'.
    To shorten the URL you might want to use a tool like URL shortener.
  3) Then do chmod +x yourrawaddress.
- 4) ./yourrawaddress to runn the script.
+ 4) ./yourrawaddress to run the script.
