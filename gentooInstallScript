@@ -76,7 +76,9 @@ emerge --verbose --update --deep --newuse @world
 sleep 3s
 echo "###Setting timezone..."
 echo "Europe/Istanbul" > /etc/timezone #change this depending on your time zone
+sleep 1s
 emerge --config sys-libs/timezone-data
+sleep 1s
 echo '###Updating environment...'
 env-update && source /etc/profile && export PS1="(chroot) ${PS1}"
 sleep 3s
@@ -103,8 +105,11 @@ genkernel all
 
 echo '### Setting hostname...'
 echo hostname="isken" > /etc/conf.d/hostname #your own hostname
+sleep 1s
 sed 's/127.0.0.1/127.0.0.1       isken isken/' /etc/hosts  # this adds your hostname for the loopback IP.
+sleep 1s
 sed -i 's/\\O//g' /etc/issue
+sleep 1s
 echo "root:asdfg123" | chpasswd #your own password
 
 echo '###Emerging system logger...'
