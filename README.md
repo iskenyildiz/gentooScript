@@ -1,6 +1,6 @@
 # gentooScript
 
-This is a Gentoo configuration script for building Gentoo. The script follows what is instructed at Gentoo.com for amd_64 systems.
+This is a Gentoo configuration script for building Gentoo. The script follows what is instructed at https://wiki.gentoo.org/wiki/Handbook:AMD64 for amd_64 systems.
  - Instead of building the kernel by hand, the script uses genkernel to install the kernel automatically.
  - You might want to change the password on the script depending on your preferences.
  - Also hostname and hosts files should be altered depending on your hostname.
