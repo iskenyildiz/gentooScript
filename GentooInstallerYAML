@@ -1,0 +1,15 @@
+---
+- name: Download gentooscript
+  hosts: my_hostname
+  tasks:
+   - name: Download Gentoo Script using get_url
+     become: yes
+     get_url:
+       url: https://raw.githubusercontent.com/iskenyildiz/gentooScript/master/g$
+       dest: /root
+       mode: 0755
+   - name: Execute the script
+     command: sh /root/gentooInstallScript
+
+
+
