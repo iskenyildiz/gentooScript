@@ -14,3 +14,5 @@ This is a Gentoo configuration script for building Gentoo. The script follows wh
    To shorten the URL you might want to use a tool like URL shortener.
  3) Then do chmod +x yourrawaddress.
  4) ./yourrawaddress to run the script.
+
+If you use Ansible for automation you can simply use the GentooInstallerYAML for automating the steps above.
