@@ -16,3 +16,5 @@ This is a Gentoo configuration script for building Gentoo. The script follows wh
  4) ./yourrawaddress to run the script.
 
 If you use Ansible for automation you can simply use the GentooInstallerYAML for automating the steps above.
+
+ansible-playbook GentooInstallerYAML.yaml
